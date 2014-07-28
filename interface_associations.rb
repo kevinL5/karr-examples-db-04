@@ -13,30 +13,26 @@ clear_database
 ## Models creation
 genre = Genre.create(name: 'rock')
 
-organizer = Organizer.create(
+festival = Festival.create(
+  name:           'Primavera Sound',
+  price_per_day:  145
+)
+
+festival.genres << genre
+
+organizer = festival.create_organizer(
   name:                   'Bob',
   email:                  'bob@example.com',
   password:               'bobthesponge',
   password_confirmation:  'bobthesponge'
 )
 
-festival = Festival.create(
-  name:           'Primavera Sound',
-  price_per_day:  145,
-  organizer:      organizer,
-  genres:         [genre]
-)
+stage = festival.stages.create(name: 'Main')
 
-stage = Stage.create(
-  name:     'Main',
-  festival: festival
-)
-
-artist = Artist.create(
+artist = stage.artists.create(
   day:    'samedi',
   hour:   '9pm',
-  name:   'Arcade Fire',
-  stage:  stage
+  name:   'Arcade Fire'
 )
 
 ## Reloading our models
