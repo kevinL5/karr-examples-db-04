@@ -1,10 +1,12 @@
-# Karr Examples 
+# ActiveRecord Database
 
-## AciveRecord Database - 04 ActiveRecord Advanced
+Part of [Karr Examples](https://github.com/lewagon/karr-examples)
+
+## ActiveRecord Advanced
 
 ### Festival app
 
-A simple app to demonstrate the ActiveReccord associations, validations and how to seed a database.
+A simple app to demonstrate the ActiveRecord associations, validations and how to seed a database.
 
 ```bash
 $ rake db:create
